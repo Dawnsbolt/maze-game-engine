@@ -1,13 +1,40 @@
 #include "main.h"
+
 Array2d<char,ROW,COL> map;
 Array2d<char,ROW,COL> memory;
 int pos_x, pos_y;
 
 int main() {
+    initscr();
+    cbreak();
+    noecho();
+
     initialize_character(1,2);
     load_map();
     update_memory();
     draw_memory();
+    int c = 0;
+    while (1) {
+        c = 0;
+        switch((c = getch())) {
+            case 65:
+                std::cout << "Up"; // key up
+                break;
+            case 66:
+                std::cout << "Down"; // key down
+                break;
+            case 67:
+                std::cout << "Right"; // key right
+                break;
+            case 68:
+                std::cout << "Left"; // key left
+                break;
+            default:
+                break;
+        }
+        std::cout.flush();
+    }
+    endwin();
     return 0;
 }
 

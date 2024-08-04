@@ -1,3 +1,4 @@
+#include <curses.h>
 #include <iostream>
 #include <array>
 
