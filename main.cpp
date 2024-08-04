@@ -1,4 +1,5 @@
 #include "main.h"
+#include "loader.h"
 
 Array2d<char,ROW,COL> map;
 Array2d<char,ROW,COL> memory;
@@ -18,7 +19,6 @@ int main() {
         clear();
         draw_memory();
         handle_input();
-        
     }
     endwin();
     return 0;

@@ -8,3 +8,7 @@ PROJECT GOAL:
 4. Win Condition
 
 5. Random map generation
+
+TODOS:
+1. Refactor main.cpp into game files & character files
+2. Setup makefile

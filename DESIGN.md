@@ -18,7 +18,31 @@ Develop a CLI maze game with procedural generation.
 a) check if destination tile is valid  
 b) update memory // confirm win condition.  
 ### CLASSES  
+`map memory` // game memory; drawn in game loop.
 #### map  
-`<vector<vector<char>>` **tiles**  
+*Walls* are represented by a '1' character.  
+*Empty* spaces are represented by a '0' character.  
+The *player* character is represented with 'C'.  
+The *goal* is represented with 'V'.  
+  
+`<vector<vector<char>> tiles`  
  // contains horizontal vectors for the map.  
-tile[y][x]
+To get a tile at the coordinates (x,y) `tiles[y][x]`  
+`char get(int x, int y) return tiles[y][x]` // Clear way to read tiles.  
+`void set(int x, int y, char input) tiles[y][x]=input;` // Clear way to update tiles.  
+`bool valid_space(int x, int y) return get(x,y)!='1';` // A Tile is considered valid if it is not set to a wall.  
+  
+`void draw_map()`  
+ * Iterate through 2D arrays and write each character with `addch()` from curses  
+ * Flush std::cout
+
+#### character
+`int pos_x`  
+`int pos_y`  
+`char prev_tile`  
+  
+`void attempt_movement(int x, int y)`  
+ * `    if (memory.valid_space(x,y)`  
+ * Update current position to `prev_tile`  
+ * Store (x,y) into prev_tile  
+ * Update (x,y) to 'C'  
