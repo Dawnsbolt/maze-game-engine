@@ -13,6 +13,7 @@ int main() {
     load_map();
     update_memory();
     draw_memory();
+    std::cout.flush();
     int c = 0;
     while (1) {
         c = 0;
@@ -51,9 +52,9 @@ void load_map() {
 void draw_memory() {
     for (int i = 0; i < ROW; i++) {
         for (int j = 0; j < COL; j++) {
-            std::cout << memory[i][j];
+            addch(memory[i][j]);
         }
-        std::cout << '\n';
+        addch('\n');
     }
 }
 
